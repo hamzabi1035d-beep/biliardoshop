@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billiard Store Morocco - متجر البيلياردو بالمغرب</title>
+    <meta name="description" content="متجر متخصص في بيع مستلزمات البيلياردو وبابي فوت في المغرب - كرات، ستيكات، طباشير، قطع غيار مع التوصيل لجميع المدن">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #22c55e;
+            --green-dark: #15803d;
+            --green-light: #4ade80;
+            --green-glow: rgba(34, 197, 94, 0.4);
+            --black: #0a0a0a;
+            --dark: #111111;
+            --gray-900: #1a1a1a;
+            --gray-800: #2a2a2a;
+            --gray-700: #3a3a3a;
+            --gray-600: #555555;
+            --gray-500: #777777;
+            --gray-400: #999999;
+            --gray-300: #bbbbbb;
+            --white: #ffffff;
+            --whatsapp: #25D366;
+            --font: 'Cairo', sans-serif;
+            --max-width: 1200px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--black);
+            color: var(--white);
+            direction: rtl;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--green-dark); }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px var(--green-glow); }
+            50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.8); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-8px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+        .animate-slide-up { animation: slideUp 0.6s ease-out forwards; }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+
+        /* ===== UTILITIES ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--green);
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.875rem, 5vw, 3rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-title .gradient-text {
+            background: linear-gradient(135deg, var(--green), var(--green-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-desc {
+            color: var(--gray-400);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .text-center { text-align: center; }
+
+        .card {
+            background: linear-gradient(135deg, rgba(30,30,30,0.9), var(--black));
+            border: 1px solid rgba(60,60,60,0.5);
+            border-radius: 1.5rem;
+            transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.1);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-green {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--green);
+            color: var(--white);
+            font-family: var(--font);
+            font-weight: 700;
+            padding: 0.875rem 1.75rem;
+            border-radius: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-green:hover {
+            background: var(--green-dark);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.25);
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--whatsapp);
+            color: var(--white);
+            font-family: var(--font);
+            font-weight: 700;
+            padding: 0.875rem 1.75rem;
+            border-radius: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
+        }
+
+        .btn-whatsapp svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.5s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-logo:hover .logo-emoji {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .logo-emoji {
+            font-size: 2.25rem;
+        }
+
+        .logo-text h1 {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            color: var(--green);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-links a {
+            color: var(--gray-300);
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-cta {
+            margin-right: 0.75rem;
+            background: var(--green-dark);
+            color: var(--white) !important;
+            padding: 0.5rem 1.25rem !important;
+            border-radius: 0.75rem !important;
+            font-weight: 700 !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--green) !important;
+            transform: scale(1.05);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 0.75rem;
+            transition: background 0.3s;
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .mobile-menu {
+            display: none;
+            margin-top: 1rem;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 1.25rem;
+            padding: 1rem;
+            border: 1px solid rgba(34, 197, 94, 0.15);
+        }
+
+        .mobile-menu.open {
+            display: block;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: var(--gray-300);
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--green);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-menu .mobile-cta {
+            display: block;
+            text-align: center;
+            background: var(--green-dark);
+            color: var(--white);
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            margin-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('./images/hero.jpg') center/cover no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+        }
+
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to left, rgba(34, 197, 94, 0.1), transparent);
+        }
+
+        .hero-blob1 {
+            position: absolute;
+            top: 5rem;
+            right: 5rem;
+            width: 18rem;
+            height: 18rem;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .hero-blob2 {
+            position: absolute;
+            bottom: 5rem;
+            left: 5rem;
+            width: 24rem;
+            height: 24rem;
+            background: rgba(34, 197, 94, 0.05);
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 900px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 9999px;
+            padding: 0.5rem 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .hero-badge span {
+            color: var(--green);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .hero h2 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero h2 .gradient-text {
+            background: linear-gradient(135deg, var(--green), var(--green-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            color: var(--gray-300);
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-desc strong {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero-stats {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-stat-value {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 900;
+            color: var(--green);
+        }
+
+        .hero-stat-label {
+            color: var(--gray-400);
+            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+            margin-top: 0.25rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator-inner {
+            width: 24px;
+            height: 40px;
+            border-radius: 9999px;
+            border: 2px solid rgba(34, 197, 94, 0.5);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 8px;
+        }
+
+        .scroll-indicator-dot {
+            width: 6px;
+            height: 12px;
+            background: var(--green);
+            border-radius: 9999px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* ===== CATEGORIES ===== */
+        .categories {
+            padding: 5rem 0;
+            background: var(--black);
+            position: relative;
+        }
+
+        .categories-bg1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24rem;
+            height: 24rem;
+            background: rgba(34, 197, 94, 0.05);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .categories-bg2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 24rem;
+            height: 24rem;
+            background: rgba(34, 197, 94, 0.05);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            padding: 2rem;
+        }
+
+        .category-icon-box {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(34,197,94,0.05));
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gray-300);
+            padding: 0.625rem 0.75rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .category-item:hover {
+            color: var(--green);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .category-item span:first-child {
+            font-size: 1.25rem;
+        }
+
+        .category-item span:last-child {
+            font-weight: 500;
+        }
+
+        /* ===== PRODUCTS ===== */
+        .products {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, var(--black), #080808, var(--black));
+            position: relative;
+        }
+
+        .products-blob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: rgba(34, 197, 94, 0.03);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .filter-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.75rem;
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(42, 42, 42, 0.5);
+            color: var(--gray-400);
+        }
+
+        .filter-btn:hover {
+            background: var(--gray-800);
+            color: var(--white);
+        }
+
+        .filter-btn.active {
+            background: var(--green);
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
+            transform: scale(1.05);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            overflow: hidden;
+        }
+
+        .product-image {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent, transparent);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            color: var(--green);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .product-price {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: var(--green);
+            color: var(--white);
+            font-size: 1.125rem;
+            font-weight: 900;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 16px rgba(34, 197, 94, 0.3);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .product-card:hover .product-info h3 {
+            color: var(--green);
+        }
+
+        .product-info p {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Products CTA */
+        .products-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .products-cta-box {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.5rem;
+            background: linear-gradient(to left, var(--gray-900), var(--gray-800));
+            border: 1px solid var(--gray-700);
+            border-radius: 1.5rem;
+            padding: 2rem;
+        }
+
+        .products-cta-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+        }
+
+        .products-cta-box p {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            padding: 5rem 0;
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-blob {
+            position: absolute;
+            top: -10rem;
+            right: -10rem;
+            width: 20rem;
+            height: 20rem;
+            background: rgba(34, 197, 94, 0.08);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
+        }
+
+        .about-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+            border-radius: 1.5rem;
+        }
+
+        .about-badge-float {
+            position: absolute;
+            bottom: -1.5rem;
+            left: -1.5rem;
+            background: var(--green);
+            color: var(--white);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .about-badge-float .big {
+            font-size: 1.875rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .about-badge-float .small {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .about-content .section-title {
+            text-align: right;
+        }
+
+        .about-content > p {
+            color: var(--gray-400);
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .feature-card {
+            background: rgba(26, 26, 26, 0.5);
+            border: 1px solid rgba(60, 60, 60, 0.5);
+            border-radius: 1rem;
+            padding: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        .feature-card .icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .feature-card h4 {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .feature-card p {
+            color: var(--gray-500);
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, var(--black), #080808, var(--black));
+            position: relative;
+        }
+
+        .contact-blob {
+            position: absolute;
+            bottom: 0;
+            right: 25%;
+            width: 20rem;
+            height: 20rem;
+            background: rgba(34, 197, 94, 0.05);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-icon-box {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 2rem;
+            transition: background 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon-box {
+            background: rgba(34, 197, 94, 0.2);
+        }
+
+        .contact-card h3 {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card .contact-value {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .contact-card .contact-sub {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--black);
+            border-top: 1px solid rgba(60, 60, 60, 0.3);
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo .logo-emoji {
+            font-size: 1.75rem;
+        }
+
+        .footer-logo h3 {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .footer-logo p {
+            color: var(--green);
+            font-size: 0.75rem;
+        }
+
+        .footer-about p {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+
+        .footer h4 {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            display: block;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            padding: 0.25rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--green);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-contact-item:hover {
+            color: var(--green);
+        }
+
+        .footer-whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--green);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-whatsapp-link:hover {
+            color: var(--green-light);
+        }
+
+        .footer-bottom {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(60, 60, 60, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom .made-in {
+            color: var(--gray-700);
+            font-size: 0.75rem;
+        }
+
+        /* ===== FLOATING WHATSAPP ===== */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .floating-whatsapp.visible {
+            opacity: 1;
+        }
+
+        .floating-whatsapp a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--whatsapp);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .floating-whatsapp a:hover {
+            background: #20bd5a;
+            transform: scale(1.1);
+        }
+
+        .floating-whatsapp a svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        .floating-whatsapp .tooltip {
+            position: absolute;
+            left: 100%;
+            margin-left: 0.75rem;
+            background: var(--white);
+            color: var(--gray-900);
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .floating-whatsapp a:hover .tooltip {
+            opacity: 1;
+        }
+
+        .floating-whatsapp.visible a {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content .section-title {
+                text-align: center;
+            }
+
+            .about-content > p {
+                text-align: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .contact-card:last-child {
+                grid-column: span 1;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .about-badge-float {
+                left: auto;
+                right: -1rem;
+                bottom: -1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 2.25rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-buttons {
+                flex-wrap: wrap;
+            }
+
+            .products-cta-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-emoji">🎱</span>
+                <div class="logo-text">
+                    <h1>Billiard Store</h1>
+                    <p>Morocco 🇲🇦</p>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#categories">الأقسام</a>
+                <a href="#products">المنتجات</a>
+                <a href="#about">من نحن</a>
+                <a href="#contact">اتصل بنا</a>
+                <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer" class="nav-cta">📞 تواصل معنا</a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menuIcon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#home" onclick="closeMobileMenu()">الرئيسية</a>
+                <a href="#categories" onclick="closeMobileMenu()">الأقسام</a>
+                <a href="#products" onclick="closeMobileMenu()">المنتجات</a>
+                <a href="#about" onclick="closeMobileMenu()">من نحن</a>
+                <a href="#contact" onclick="closeMobileMenu()">اتصل بنا</a>
+                <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer" class="mobile-cta">📞 تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-blob1"></div>
+        <div class="hero-blob2"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>متجر معتمد في المغرب 🇲🇦</span>
+            </div>
+
+            <h2>
+                🎲 <span class="gradient-text">متجر البيلياردو</span>
+                <br>
+                في المغرب
+            </h2>
+
+            <p class="hero-desc">
+                كل ما تحتاجه لطاولة البيلياردو وبابي فوت
+                <br>
+                <strong>جودة عالية وأسعار تنافسية مع التوصيل لجميع المدن</strong>
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="btn-green">
+                    تصفح المنتجات
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="transform: scaleX(-1)">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+                <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    تواصل عبر واتساب
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="text-center">
+                    <div class="hero-stat-value">+500</div>
+                    <div class="hero-stat-label">عميل سعيد</div>
+                </div>
+                <div class="text-center">
+                    <div class="hero-stat-value">+200</div>
+                    <div class="hero-stat-label">منتج متوفر</div>
+                </div>
+                <div class="text-center">
+                    <div class="hero-stat-value">24/7</div>
+                    <div class="hero-stat-label">خدمة العملاء</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-indicator-inner">
+                <div class="scroll-indicator-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIES ===== -->
+    <section class="categories" id="categories">
+        <div class="categories-bg1"></div>
+        <div class="categories-bg2"></div>
+
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <span class="section-badge">📂 الأقسام</span>
+                <h2 class="section-title">تصفح حسب <span class="gradient-text">القسم</span></h2>
+                <p class="section-desc">نوفر لكم كل ما تحتاجونه من مستلزمات البيلياردو والبابي فوت</p>
+            </div>
+
+            <div class="categories-grid">
+                <!-- Billiard -->
+                <div class="card category-card">
+                    <div class="category-icon-box">🎱</div>
+                    <h3>مستلزمات البيلياردو</h3>
+                    <div class="category-item"><span>⚪</span><span>كرات بيلياردو</span></div>
+                    <div class="category-item"><span>🥢</span><span>عصي (ستيكات)</span></div>
+                    <div class="category-item"><span>🟦</span><span>طباشير Master</span></div>
+                    <div class="category-item"><span>🟩</span><span>قماش الطاولات</span></div>
+                    <div class="category-item"><span>🌉</span><span>جسور Rest</span></div>
+                    <div class="category-item"><span>🔧</span><span>قطع غيار</span></div>
+                </div>
+
+                <!-- Foosball -->
+                <div class="card category-card">
+                    <div class="category-icon-box">⚽</div>
+                    <h3>مستلزمات بابي فوت</h3>
+                    <div class="category-item"><span>⚽</span><span>كرات بابي فوت</span></div>
+                    <div class="category-item"><span>🤚</span><span>مقابض</span></div>
+                    <div class="category-item"><span>🔩</span><span>قضبان اللاعبين</span></div>
+                    <div class="category-item"><span>🧑</span><span>مجسمات اللاعبين</span></div>
+                    <div class="category-item"><span>🌀</span><span>نوابض</span></div>
+                    <div class="category-item"><span>🔧</span><span>قطع غيار</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="products" id="products">
+        <div class="products-blob"></div>
+
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <span class="section-badge">🛒 المنتجات</span>
+                <h2 class="section-title">أحدث <span class="gradient-text">المنتجات</span></h2>
+                <p class="section-desc">اكتشف مجموعتنا المتميزة من مستلزمات البيلياردو وبابي فوت</p>
+            </div>
+
+            <!-- Filter -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">🏪 الكل</button>
+                <button class="filter-btn" data-filter="billiard">🎱 بيلياردو</button>
+                <button class="filter-btn" data-filter="foosball">⚽ بابي فوت</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+
+                <!-- Product 1 -->
+                <div class="card product-card" data-category="billiard">
+                    <div class="product-image">
+                        <img src="./images/billiard-ball.jpg" alt="كرة بيلياردو احترافية" loading="lazy">
+                        <div class="product-image-overlay"></div>
+                        <span class="product-badge">🎱 بيلياردو</span>
+                        <span class="product-price">250 DH</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>كرة بيلياردو احترافية</h3>
+                        <p>كرة بيلياردو احترافية عالية الجودة، مصنوعة من الراتينج الممتاز لضمان أداء مثالي</p>
+                        <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%3A%20%D9%83%D8%B1%D8%A9%20%D8%A8%D9%8A%D9%84%D9%8A%D8%A7%D8%B1%D8%AF%D9%88%20%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9%20-%20250%20DH" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="card product-card" data-category="billiard">
+                    <div class="product-image">
+                        <img src="./images/cue-stick.jpg" alt="ستيك بيلياردو" loading="lazy">
+                        <div class="product-image-overlay"></div>
+                        <span class="product-badge">🎱 بيلياردو</span>
+                        <span class="product-price">350 DH</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>ستيك بيلياردو</h3>
+                        <p>ستيك بيلياردو خشبي احترافي بتصميم مريح وقوة دقة عالية في اللعب</p>
+                        <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%3A%20%D8%B3%D8%AA%D9%8A%D9%83%20%D8%A8%D9%8A%D9%84%D9%8A%D8%A7%D8%B1%D8%AF%D9%88%20-%20350%20DH" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="card product-card" data-category="billiard">
+                    <div class="product-image">
+                        <img src="./images/chalk.jpg" alt="طباشير Master" loading="lazy">
+                        <div class="product-image-overlay"></div>
+                        <span class="product-badge">🎱 بيلياردو</span>
+                        <span class="product-price">25 DH</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>طباشير Master</h3>
+                        <p>طباشير Master الأصلي لضمان أفضل أداء في اللعب، مقاوم للتفتت</p>
+                        <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%3A%20%D8%B7%D8%A8%D8%A7%D8%B4%D9%8A%D8%B1%20Master%20-%2025%20DH" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="card product-card" data-category="foosball">
+                    <div class="product-image">
+                        <img src="./images/foosball-ball.jpg" alt="كرة بابي فوت" loading="lazy">
+                        <div class="product-image-overlay"></div>
+                        <span class="product-badge">⚽ بابي فوت</span>
+                        <span class="product-price">30 DH</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>كرة بابي فوت</h3>
+                        <p>كرة بابي فوت متينة وعالية الجودة، مناسبة للاستخدام المكثف</p>
+                        <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%3A%20%D9%83%D8%B1%D8%A9%20%D8%A8%D8%A7%D8%A8%D9%8A%20%D9%81%D9%88%D8%AA%20-%2030%20DH" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="card product-card" data-category="foosball">
+                    <div class="product-image">
+                        <img src="./images/foosball-handle.jpg" alt="مقبض بابي فوت" loading="lazy">
+                        <div class="product-image-overlay"></div>
+                        <span class="product-badge">⚽ بابي فوت</span>
+                        <span class="product-price">40 DH</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>مقبض بابي فوت</h3>
+                        <p>مقبض بابي فوت مريح وصديق للبيئة، تصميم محكم لضمان قبضة ممتازة</p>
+                        <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%3A%20%D9%85%D9%82%D8%A8%D8%B6%20%D8%A8%D8%A7%D8%A8%D9%8A%20%D9%81%D9%88%D8%AA%20-%2040%20DH" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            اطلب الآن
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="products-cta">
+                <div class="products-cta-box">
+                    <div>
+                        <h3>لم تجد ما تبحث عنه؟</h3>
+                        <p>تواصل معنا وسنجد لك ما تحتاج</p>
+                    </div>
+                    <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        تواصل عبر واتساب
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="about-blob"></div>
+
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <img src="./images/foosball.jpg" alt="Billiard Store Morocco" loading="lazy">
+                    <div class="about-image-overlay"></div>
+                    <div class="about-badge-float">
+                        <div class="big">+5</div>
+                        <div class="small">سنوات خبرة</div>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <span class="section-badge">🏢 من نحن</span>
+                    <h2 class="section-title">
+                        شريكك الموثوق في عالم
+                        <br>
+                        <span class="gradient-text">البيلياردو والبابي فوت</span>
+                    </h2>
+                    <p>
+                        نحن متخصصون في بيع جميع مستلزمات البيلياردو وبابي فوت داخل المغرب مع إمكانية الشحن لجميع المدن. نوفر لكم منتجات عالية الجودة من أفضل العلامات التجارية العالمية بأسعار تنافسية.
+                    </p>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <span class="icon">🚚</span>
+                            <h4>شحن سريع</h4>
+                            <p>لجميع المدن المغربية</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="icon">✅</span>
+                            <h4>جودة عالية</h4>
+                            <p>منتجات أصلية ومعتمدة</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="icon">💰</span>
+                            <h4>أسعار تنافسية</h4>
+                            <p>أفضل الأسعار في المغرب</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="icon">🎯</span>
+                            <h4>خدمة متميزة</h4>
+                            <p>دعم فني وخدمة ما بعد البيع</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+        <div class="contact-blob"></div>
+
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <span class="section-badge">📞 اتصل بنا</span>
+                <h2 class="section-title">تواصل <span class="gradient-text">معنا</span></h2>
+                <p class="section-desc">نسعد بتواصلكم معنا للاستفسار أو الطلب</p>
+            </div>
+
+            <div class="contact-grid">
+                <a href="tel:+212717657640" class="card contact-card">
+                    <div class="contact-icon-box">📞</div>
+                    <h3>الهاتف</h3>
+                    <span class="contact-value" dir="ltr">0717657640</span>
+                </a>
+
+                <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer" class="card contact-card">
+                    <div class="contact-icon-box">
+                        <svg width="32" height="32" fill="#22c55e" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                    <h3>واتساب</h3>
+                    <span class="contact-value">اطلب عبر واتساب</span>
+                </a>
+
+                <div class="card contact-card">
+                    <div class="contact-icon-box">📍</div>
+                    <h3>الموقع</h3>
+                    <span class="contact-value">المملكة المغربية 🇲🇦</span>
+                    <span class="contact-sub">الشحن لجميع المدن</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-emoji">🎱</span>
+                        <div>
+                            <h3>Billiard Store</h3>
+                            <p>Morocco 🇲🇦</p>
+                        </div>
+                    </div>
+                    <p>متجرك الأول لجميع مستلزمات البيلياردو وبابي فوت في المغرب</p>
+                </div>
+
+                <div>
+                    <h4>روابط سريعة</h4>
+                    <div class="footer-links">
+                        <a href="#home">الرئيسية</a>
+                        <a href="#categories">الأقسام</a>
+                        <a href="#products">المنتجات</a>
+                        <a href="#about">من نحن</a>
+                        <a href="#contact">اتصل بنا</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>المنتجات</h4>
+                    <div class="footer-links">
+                        <a href="#products">كرات بيلياردو</a>
+                        <a href="#products">ستيكات</a>
+                        <a href="#products">طباشير</a>
+                        <a href="#products">كرات بابي فوت</a>
+                        <a href="#products">مقابض</a>
+                        <a href="#products">قطع غيار</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <a href="tel:+212717657640" class="footer-contact-item">
+                        <span>📞</span>
+                        <span dir="ltr">0717657640</span>
+                    </a>
+                    <div class="footer-contact-item">
+                        <span>📍</span>
+                        <span>المغرب</span>
+                    </div>
+                    <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer" class="footer-whatsapp-link">
+                        💬 تواصل عبر واتساب
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Billiard Store Morocco. جميع الحقوق محفوظة</p>
+                <p class="made-in">🇲🇦 صنع بكل ❤️ في المغرب</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING WHATSAPP ===== -->
+    <div class="floating-whatsapp" id="floatingWhatsapp">
+        <a href="https://wa.me/212717657640?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span class="tooltip">تواصل عبر واتساب 💬</span>
+        </a>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        let menuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', function () {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.add('open');
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+            } else {
+                mobileMenu.classList.remove('open');
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+            }
+        });
+
+        function closeMobileMenu() {
+            menuOpen = false;
+            mobileMenu.classList.remove('open');
+            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+        }
+
+        // Product filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                // Update active state
+                filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                productCards.forEach(function (card) {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = '';
+                        card.style.animation = 'slideUp 0.4s ease-out forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Floating WhatsApp button
+        setTimeout(function () {
+            document.getElementById('floatingWhatsapp').classList.add('visible');
+        }, 2000);
+
+        // Scroll animations (intersection observer)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .feature-card').forEach(function (el) {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+    </script>
+
+    <!-- React mount point (required by build system) -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
